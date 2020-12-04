@@ -4,7 +4,8 @@ import { Grid, Button, Container } from '@material-ui/core';
 import Contador from './components/Contador';
 import Info from './components/Info';
 import AppBar from './components/AppBar';
-import Botones from './components/Botones'
+import Botones from './components/Botones';
+import InfoBtnRamdom from './components/InfoBtnRamdom' ;
 
  const contenido = [
    {
@@ -38,24 +39,27 @@ function App() {
       {contenido.map( (item, index) => 
       item.number > 1 ?  <Grid item xs={4} key={index}><Cuadro  titulo = {item.titulo} texto = {item.texto} /> </Grid>: '')
     }
+      <Grid item xs={4}>
+        <Cuadro>
+          <Contador/>
+          <Botones/>
+        </Cuadro>
+      </Grid>
+      <Grid item xs={4}>
       <Cuadro>
-        <Contador/>
-        <Botones/>
+        <InfoBtnRamdom/>
       </Cuadro>
+      </Grid>
+      <Grid item xs={4}>
       <Cuadro>
-        <Info
-          id = {5}
-        />
-        <Info
-          id = {4}
-        />
-        <Info
-          id = {8}
-        />
-        <Info
-          id = {6}
-        />
+        <Info id = {4}/>
       </Cuadro>
+      </Grid>
+      <Grid item xs={4}>
+      <Cuadro>
+        <Info id = {4}/>
+      </Cuadro>
+    </Grid>
     </Grid>
     </Container>
   );
