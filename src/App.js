@@ -1,6 +1,6 @@
 import React from 'react';
 import Cuadro from './components/Cuadro';
-import { Grid, Button } from '@material-ui/core';
+import { Grid, Button, Container } from '@material-ui/core';
 import Contador from './components/Contador';
 import Info from './components/Info';
 import AppBar from './components/AppBar';
@@ -26,8 +26,9 @@ import Botones from './components/Botones'
 
 function App() {
   return (
+    <Container maxWidth="lg">
+      <AppBar/>
       <Grid container >
-        {/* <AppBar/> */}
         <Grid item xs={4}>
         <Cuadro
           titulo = '20'
@@ -56,6 +57,7 @@ function App() {
         />
       </Cuadro>
     </Grid>
+    </Container>
   );
 }
 
